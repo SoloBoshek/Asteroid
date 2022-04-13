@@ -7,8 +7,10 @@ public class Player : MonoBehaviour
     public Bullet bulletPrefab;
     private bool _thrusting;
     private float _turnDirection;
-    float thrustSpeed = 10;
-    float turnSpeed = 1;
+    float thrustSpeed = 7.0f;
+    float turnSpeed = 0.75f;
+
+    Vector3 shipOffset = new Vector3(0, 0.5f, 0);
 
     private Rigidbody2D _rigidbody;
 
@@ -37,7 +39,7 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
-        Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
+        Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position + shipOffset, this.transform.rotation);
         bullet.Project(this.transform.up);
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 400.0f;
-    public float maxLifeTime = 10.0f;
+    public float speed = 1000.0f;
+    public float maxLifeTime = 5.0f;
 
     private Rigidbody2D _rigidbody;
 
